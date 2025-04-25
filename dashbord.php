@@ -9,10 +9,16 @@
                 <div class="card-header pb-0">
                   <h6 class="mb-0 mt-2 d-flex align-items-center">Synthèse Approvisionnements<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales"><span class="far fa-question-circle" data-fa-transform="shrink-1"></span></span></h6>
                 </div>
-                <div class="card-body d-flex flex-column justify-content-end">
-                  <div class="row">
-                    <div class="col">
-                      <p class="font-sans-serif lh-1 mb-1 fs-4">127</p><span class="badge badge-soft-success rounded-pill fs--2">+3.5%</span>
+                <div class="card-body d-flex flex-column justify-content-center">
+                  <div class="row ">
+                    <div class="col md-4">
+                      <p title="commande en cours" class="font-sans-serif lh-1 mb-1 fs-4">127</p><span class="badge badge-soft-success rounded-pill fs--2">en cours</span>
+                    </div>
+                    <div class="col md-4">
+                      <p title="commande en retard " class="font-sans-serif lh-1 mb-1 fs-4">25</p><span class="badge badge-soft-danger rounded-pill fs--2">en retard</span>
+                    </div>
+                    <div class="col md-4">
+                      <p title="commande à valider " class="font-sans-serif lh-1 mb-1 fs-4">73</p><span class="badge badge-soft-primary rounded-pill fs--2">à valider</span>
                     </div>
                     <div class="col-auto ps-0">
                       <div class="echart-bar-weekly-sales h-100"></div>
@@ -40,63 +46,98 @@
               </div>
             </div>
             <!-- Gestion des Stocks -->
-            <div class="col-md-6 col-xxl-3">
+            <div class="col-md-12 col-xxl-3">
               <div class="card h-md-100">
-                <div class="card-body">
-                  <div class="row h-100 justify-content-between g-0">
-                    <div class="col-5 col-sm-6 col-xxl pe-2">
-                      <h6 class="mt-1">Gestion des Stocks</h6>
-                      <div class="fs--2 mt-3">
-                        <div class="d-flex flex-between-center mb-1">
-                          <div class="d-flex align-items-center"><span class="dot bg-primary"></span><span class="fw-semi-bold">Samsung</span></div>
-                          <div class="d-xxl-none">33%</div>
-                        </div>
-                        <div class="d-flex flex-between-center mb-1">
-                          <div class="d-flex align-items-center"><span class="dot bg-info"></span><span class="fw-semi-bold">Huawei</span></div>
-                          <div class="d-xxl-none">29%</div>
-                        </div>
-                        <div class="d-flex flex-between-center mb-1">
-                          <div class="d-flex align-items-center"><span class="dot bg-300"></span><span class="fw-semi-bold">Apple</span></div>
-                          <div class="d-xxl-none">20%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto position-relative">
-                      <div class="echart-market-share"></div>
-                      <div class="position-absolute top-50 start-50 translate-middle text-dark fs-2">26M</div>
-                    </div>
-                  </div>
+              <div class="card-header pb-0">
+                  <h6 class="mb-0 mt-2 d-flex align-items-center">Gestion de stock<span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales"><span class="far fa-question-circle" data-fa-transform="shrink-1"></span></span></h6>
                 </div>
-              </div>
-            </div>
-                 <!-- Fournisseurs à Évaluer -->
-            <div class="col-md-6 col-xxl-3">
-              <div class="card h-md-100">
-                <div class="card-header d-flex flex-between-center pb-0">
-                  <h6 class="mb-0">Weather</h6>
-                  <div class="dropdown font-sans-serif btn-reveal-trigger">
-                    <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="dropdown-weather-update" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                    <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-weather-update"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body pt-2">
-                  <div class="row g-0 h-100 align-items-center">
-                    <div class="col">
-                      <div class="d-flex align-items-center"><img class="me-3" src="assets/img/icons/weather-icon.png" alt="" height="60" />
-                        <div>
-                          <h6 class="mb-2">New York City</h6>
-                          <div class="fs--2 fw-semi-bold">
-                            <div class="text-warning">Sunny</div>Precipitation: 50%
+              <div class="card-body p-0">
+                  <div class="table-responsive scrollbar">
+                    <table class="table table-dashboard mb-0 table-borderless fs--1 border-200">
+                      <thead class="bg-light">
+                      <tr class="text-900">
+                        <th>Product</th>
+                        <th class="text-center">Stock</th>
+                        <th class="text-center">Stock Status</th>
+                        <th class="text-end">Reorder Level</th>
+                        <th class="pe-x1 text-end" style="width: 8rem">Actions</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr class="border-bottom border-200">
+                        <td>
+                        <div class="d-flex align-items-center position-relative"><img class="rounded-1 border border-200" src="assets/img/ecommerce/1.jpg" width="60" alt="" />
+                          <div class="flex-1 ms-3">
+                          <h6 class="mb-1 fw-semi-bold text-nowrap"><a class="text-900 stretched-link" href="#!">iPad Pro 2020 11</a></h6>
+                          <p class="fw-semi-bold mb-0 text-500">Tablet</p>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-auto text-center ps-2">
-                      <div class="fs-4 fw-normal font-sans-serif text-primary mb-1 lh-1">31&deg;</div>
-                      <div class="fs--1 text-800">32&deg; / 25&deg;</div>
-                    </div>
+                        </td>
+                        <td class="align-middle text-center fw-semi-bold">50</td>
+                        <td class="align-middle text-center">
+                        <span class="badge badge-soft-success rounded-pill fs--2">In Stock</span>
+                        </td>
+                        <td class="align-middle text-end fw-semi-bold">20</td>
+                        <td class="align-middle pe-x1 text-end">
+                        <button class="btn btn-sm btn-primary">Reorder</button>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                        <div class="d-flex align-items-center position-relative"><img class="rounded-1 border border-200" src="assets/img/ecommerce/2.jpg" width="60" alt="" />
+                          <div class="flex-1 ms-3">
+                          <h6 class="mb-1 fw-semi-bold text-nowrap"><a class="text-900 stretched-link" href="#!">iPhone XS</a></h6>
+                          <p class="fw-semi-bold mb-0 text-500">Smartphone</p>
+                          </div>
+                        </div>
+                        </td>
+                        <td class="align-middle text-center fw-semi-bold">10</td>
+                        <td class="align-middle text-center">
+                        <span class="badge badge-soft-warning rounded-pill fs--2">Low Stock</span>
+                        </td>
+                        <td class="align-middle text-end fw-semi-bold">15</td>
+                        <td class="align-middle pe-x1 text-end">
+                        <button class="btn btn-sm btn-primary">Reorder</button>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                        <div class="d-flex align-items-center position-relative"><img class="rounded-1 border border-200" src="assets/img/ecommerce/3.jpg" width="60" alt="" />
+                          <div class="flex-1 ms-3">
+                          <h6 class="mb-1 fw-semi-bold text-nowrap"><a class="text-900 stretched-link" href="#!">Amazfit Pace (Global)</a></h6>
+                          <p class="fw-semi-bold mb-0 text-500">Smartwatch</p>
+                          </div>
+                        </div>
+                        </td>
+                        <td class="align-middle text-center fw-semi-bold">0</td>
+                        <td class="align-middle text-center">
+                        <span class="badge badge-soft-danger rounded-pill fs--2">Out of Stock</span>
+                        </td>
+                        <td class="align-middle text-end fw-semi-bold">10</td>
+                        <td class="align-middle pe-x1 text-end">
+                        <button class="btn btn-sm btn-primary">Reorder</button>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                        <div class="d-flex align-items-center position-relative"><img class="rounded-1 border border-200" src="assets/img/ecommerce/4.jpg" width="60" alt="" />
+                          <div class="flex-1 ms-3">
+                          <h6 class="mb-1 fw-semi-bold text-nowrap"><a class="text-900 stretched-link" href="#!">Lotto AMF Posh Sports Plus</a></h6>
+                          <p class="fw-semi-bold mb-0 text-500">Shoes</p>
+                          </div>
+                        </div>
+                        </td>
+                        <td class="align-middle text-center fw-semi-bold">30</td>
+                        <td class="align-middle text-center">
+                        <span class="badge badge-soft-success rounded-pill fs--2">In Stock</span>
+                        </td>
+                        <td class="align-middle text-end fw-semi-bold">10</td>
+                        <td class="align-middle pe-x1 text-end">
+                        <button class="btn btn-sm btn-primary">Reorder</button>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -170,8 +211,54 @@
                         toutes les tâches<span class="fas fa-chevron-right ms-1 fs--2"></span></a></div>
               </div>
             </div>
+              <!-- Fournisseurs à Évaluer -->
+              <div class="col-6 col-lg-6 mb-3">
+                  <div class="card border-danger shadow h-100">
+                    <div class="card-header bg-danger text-white d-flex align-items-center">
+                      <span class="fas fa-exclamation-triangle me-2 fs-4"></span>
+                      <h6 class="mb-0 flex-grow-1">Alertes Critiques</h6>
+                      <button class="btn btn-sm btn-light text-danger" title="Rafraîchir"><span class="fas fa-sync-alt"></span></button>
+                    </div>
+                    <div class="card-body bg-light">
+                      <!-- Exemple d'alerte critique : Rupture de stock -->
+                      <div class="alert alert-warning d-flex align-items-center mb-3 shadow-sm" role="alert">
+                        <span class="fas fa-box-open me-2 fs-5"></span>
+                        <div>
+                          <strong>Rupture de stock</strong> : Article <span class="badge bg-warning text-dark">X123</span>
+                          <div class="small text-muted">Entrepôt Central – 25 avril 2025, 09:15</div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-warning ms-auto">Voir</a>
+                      </div>
+                      <!-- Exemple d'alerte critique : Livraison en retard -->
+                      <div class="alert alert-danger d-flex align-items-center mb-3 shadow-sm" role="alert">
+                        <span class="fas fa-truck-loading me-2 fs-5"></span>
+                        <div>
+                          <strong>Livraison en retard</strong> : Commande <span class="badge bg-danger">#CMD789</span>
+                          <div class="small text-muted">Fournisseur ABC – 24 avril 2025, 18:00</div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-danger ms-auto">Détails</a>
+                      </div>
+                      <!-- Exemple d'alerte critique : Incident qualité -->
+                      <div class="alert alert-info d-flex align-items-center mb-3 shadow-sm" role="alert">
+                        <span class="fas fa-exclamation-circle me-2 fs-5"></span>
+                        <div>
+                          <strong>Incident qualité</strong> : Lot <span class="badge bg-info text-dark">LOT456</span>
+                          <div class="small text-muted">Inspection – 23 avril 2025, 14:30</div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-info ms-auto">Suivre</a>
+                      </div>
+                      <!-- Si aucune alerte -->
+                      <!-- <div class="text-center text-success fw-bold py-4"><span class="fas fa-check-circle me-2"></span>Aucune alerte critique</div> -->
+                    </div>
+                  </div>
+                </div>
+
+            
+            
+          </div>
+          <div class="row">
             <!-- Total des dépenses -->
-            <div class="col-lg-6 ps-lg-2 mb-3">
+            <div class="col-lg-12 ps-lg-2 mb-3">
               <div class="card h-lg-100">
                 <div class="card-header">
                   <div class="row flex-between-center">
