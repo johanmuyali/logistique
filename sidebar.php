@@ -44,7 +44,7 @@
                       </a>
                       <!-- more inner pages-->
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="app/email/email-detail.html">
+                    <li class="nav-item"><a class="nav-link" href="Gestion_des_fournisseurs.php">
                         <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Gestion des fournisseurs</span>
                         </div>
                       </a>
